@@ -29,6 +29,8 @@ int _printf(const char *format, ...)
 				str_print(args, &count);
 			else if (format[array_ctr] == 'c')
 				char_print(args, &count);
+			else if (format[array_ctr] == 'd' || format[array_ctr] == 'i')
+				int_print(args, &count);
 			else if (format[array_ctr] == '%')
 			{
 				_putchar('%');
