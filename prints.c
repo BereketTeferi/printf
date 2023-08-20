@@ -20,7 +20,7 @@ int str_print(const char *format, va_list args, int *count, int *array_ctr)
 	{
 		str = va_arg(args, char *);
 		if (str == NULL)
-			str = "(nil)";
+			return (-1);
 		while (str[i] != '\0')
 		{
 			_putchar(str[i]);
