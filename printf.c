@@ -3,7 +3,7 @@
 /**
  * _printf - printf clone
  *
- * format: format used for the print
+ * @format: format used for the print
  *
  * Return: number of characters printed
  */
@@ -28,7 +28,6 @@ int _printf(const char *format, ...)
 			{
 				c = (char)va_arg(args, int);
 				_putchar(c);
-				count++;
 			}
 			else if (*format == 's')
 			{
@@ -37,20 +36,7 @@ int _printf(const char *format, ...)
 				{
 					_putchar(*str);
 					str++;
-					count++;
 				}
-			}
-			else if (*format == '%')
-			{
-				_putchar('%');
-				count++;
-			}
-			else
-			{
-				_putchar('%');
-				count++;
-				_putchar(*format);
-				count++;
 			}
 		}
 		else
