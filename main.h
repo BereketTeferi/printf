@@ -8,8 +8,7 @@
 
 int _printf(const char *format, ...);
 int _putchar(char c);
-int str_print(const char *format, va_list args, int *count, int *array_ctr);
-int char_print(const char *format, va_list args, int *count, int *array_ctr);
-int perc_print(const char *format, int *count, int *array_ctr);
+int str_print(va_list args, int *count);
+int char_print(va_list args, int *count);
 
 #endif

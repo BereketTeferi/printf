@@ -9,23 +9,28 @@
 int _printf(const char *format, ...)
 {
 	va_list args;
-	int count = 0, array_ctr = 0, result = 0;
+	int count = 0, array_ctr = 0;
 
 	va_start(args, format);
-	while (*format)
+	while (format[array_ctr])
 	{
-		if (format[array_ctr] != '\0')
+		if (format[array_ctr] != '%')
 		{
 			_putchar(format[array_ctr]);
 			count++;
 		}
 		else
 		{
-			result = str_print(format, args, &count, &array_ctr);
-			result = char_print(format, args, &count, &array_ctr);
-			result = perc_print(format, &count, &array_ctr);
-			if (result == -1)
-				return (-1);
+			array_ctr++;
+			if (format[array_ctr] == 's')
+				str_print(args, &count);
+			else if (format[array_ctr] == 'c')
+				char_print(args, &count);
+			else if (format[array_ctr] == '%')
+			{
+				_putchar('%');
+				count++;
+			}
 		}
 		array_ctr++;
 	}
