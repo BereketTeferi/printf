@@ -20,7 +20,7 @@ int str_print(va_list args, int *count)
 	{
 		_putchar(str[i]);
 		i++;
-		*count += 1;
+		(*count)++;
 	}
 	return (i);
 }
@@ -39,6 +39,6 @@ int char_print(va_list args, int *count)
 	char c = va_arg(args, int);
 
 	_putchar(c);
-	*count += 1;
+	(*count)++;
 	return (1);
 }
