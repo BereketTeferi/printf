@@ -36,7 +36,7 @@ int str_print(va_list args, int *count)
 
 int char_print(va_list args, int *count)
 {
-	char c = va_arg(args, int);
+	char c = (char)va_arg(args, int);
 
 	_putchar(c);
 	(*count)++;
