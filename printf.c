@@ -11,10 +11,9 @@ int _printf(const char *format, ...)
 	va_list args;
 	int count = 0, array_ctr = 0;
 
-	if (format == NULL || format[0] == '\0')
-		return (-1);
-
 	va_start(args, format);
+	if (format == NULL)
+		return (count);
 	while (format[array_ctr])
 	{
 		if (format[array_ctr] != '%')
@@ -38,11 +37,6 @@ int _printf(const char *format, ...)
 			}
 			else if (format[array_ctr] == '\0' || format[array_ctr] == ' ')
 				return (-1);
-			else
-			{
-				_putchar('%');
-				count++;
-			}
 		}
 		array_ctr++;
 	}
