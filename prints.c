@@ -17,13 +17,21 @@ int str_print(va_list args, int *count)
 	if (str == NULL)
 	{
 		str = "(null)";
-		return (6);
+		while (str[i] != '\0')
+		{
+			_putchar(str[i]);
+			i++;
+		}
+		(*count) += 6;
 	}
-	while (str[i] != '\0')
+	else
 	{
-		_putchar(str[i]);
-		i++;
-		(*count)++;
+		while (str[i] != '\0')
+		{
+			_putchar(str[i]);
+			i++;
+			(*count)++;
+		}
 	}
 	return (i);
 }
