@@ -11,7 +11,7 @@ int _printf(const char *format, ...)
 	va_list args;
 	int count = 0, array_ctr = 0;
 
-	if (format == NULL)
+	if (format == NULL || format[0] == '\0')
 		return (-1);
 
 	va_start(args, format);
