@@ -11,5 +11,6 @@ int _putchar(char c);
 int str_print(va_list args, int *count);
 int char_print(va_list args, int *count);
 int int_print(va_list args, int *count);
+int power(int base, int exponent);
 
 #endif

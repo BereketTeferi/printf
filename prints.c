@@ -55,7 +55,7 @@ int char_print(va_list args, int *count)
 int int_print(va_list args, int *count)
 {
 	int num = va_arg(args, int);
-	int num_length = 0, num_copy = num, i;
+	int num_length = 0, num_copy = num, i, digit;
 
 	if (num == 0)
 	{
@@ -78,7 +78,7 @@ int int_print(va_list args, int *count)
 	{
 		digit = (num / power(10, num_length - i - 1)) % 10;
 		_putchar('0' + digit);
-		*count)++;
+		(*count)++;
 	}
 	return (num < 0 ? num_length + 1 : num_length);
 }
