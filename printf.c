@@ -29,6 +29,5 @@ int _printf(const char *format, ...)
 		}
 		array_ctr++;
 	}
-	va_end(args);
 	return (count);
 }
