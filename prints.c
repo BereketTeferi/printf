@@ -15,7 +15,10 @@ int str_print(va_list args, int *count)
 	int i = 0;
 
 	if (str == NULL)
+	{
 		str = "(null)";
+		return (6);
+	}
 	while (str[i] != '\0')
 	{
 		_putchar(str[i]);
