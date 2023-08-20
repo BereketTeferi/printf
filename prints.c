@@ -22,7 +22,7 @@ int str_print(va_list args, int *count)
 			_putchar(str[i]);
 			i++;
 		}
-		(*count) += 6;
+		*count += 6;
 	}
 	else
 	{
