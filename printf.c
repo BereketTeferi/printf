@@ -36,7 +36,7 @@ int _printf(const char *format, ...)
 				_putchar('%');
 				count++;
 			}
-			else if (format[array_ctr] == '\0' || format[array_ctr] == ' ')
+			else if (format[array_ctr] == '\0' || format[array_ctr] == ' ' || format[array_ctr] == '')
 				return (-1);
 		}
 		array_ctr++;
