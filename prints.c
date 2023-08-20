@@ -25,9 +25,9 @@ int str_print(const char *format, va_list args, int *count, int *array_ctr)
 		{
 			_putchar(str[i]);
 			i++;
-			count++;
+			*count += 1;
 		}
-		array_ctr++;
+		*array_ctr += 1;
 	}
 	return (0);
 }
@@ -53,8 +53,8 @@ int char_print(const char *format, va_list args, int *count, int *array_ctr)
 		if (c == 0)
 			return (-1);
 		_putchar(c);
-		count++;
-		array_ctr++;
+		*count += 1;
+		*array_ctr += 1;
 	}
 	return (0);
 }
@@ -74,8 +74,8 @@ int perc_print(const char *format, int *count, int *array_ctr)
 	if (format[*array_ctr + 1] == '%')
 	{
 		_putchar('%');
-		count++;
-		array_ctr++;
+		*count += 1;
+		*array_ctr += 1;
 	}
 	return (0);
 }
