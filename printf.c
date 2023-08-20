@@ -1,47 +1,49 @@
+#include <stdarg.h>
+#include <unistd.h>
 #include "main.h"
 
 /**
- * _printf - printf clone
+ * _printf - Custom printf function.
+ * @format: Format string containing directives.
  *
- * @format: format used for the print
- *
- * Return: number of characters printed
+ * Return: The number of characters printed (excluding null byte).
  */
-
 int _printf(const char *format, ...)
 {
-	unsigned int count = 0;
-	char *str, c;
 	va_list args;
+	char *str, c;
+	int count = 0, i = 0;
 
 	va_start(args, format);
-	if (format == NULL)
-		return (count);
 	while (*format)
 	{
 		if (*format == '%')
 		{
 			format++;
-			if (*format == '\0' || *format == ' ')
-				return (-1);
 			if (*format == 'c')
 			{
-				c = (char)va_arg(args, int);
-				_putchar(c);
+				c = va_arg(args, int);
+				write(1, &c, 1);
+				count++;
 			}
 			else if (*format == 's')
 			{
-				*str = va_arg(args, char*);
-				while (*str)
+				*str = va_arg(args, char *);
+				for (i = 0; str[i] != '\0'; i++)
 				{
-					_putchar(*str);
-					str++;
+					write(1, str[i], 1);
+					count++;
 				}
+			}
+			else if (*format == '%')
+			{
+				write(1, "%", 1);
+				count++;
 			}
 		}
 		else
 		{
-			_putchar(*format);
+			write(1, format, 1);
 			count++;
 		}
 		format++;
