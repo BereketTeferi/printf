@@ -50,7 +50,7 @@ int char_print(const char *format, va_list args, int *count, int *array_ctr)
 	if (format[*array_ctr + 1] == 'c')
 	{
 		c = va_arg(args, int);
-		if (!c)
+		if (c == 0)
 			return (-1);
 		_putchar(c);
 		count++;
