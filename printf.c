@@ -11,21 +11,19 @@
 int _printf(const char *format, ...)
 {
 	unsigned int count = 0;
-	char *str;
-	char c;
+	char *str, c;
 	va_list args;
 
 	va_start(args, format);
-
+	if (format == NULL)
+		return (count);
 	while (*format)
 	{
 		if (*format == '%')
 		{
 			format++;
 			if (*format == '\0' || *format == ' ')
-			{
 				return (-1);
-			}
 			if (*format == 'c')
 			{
 				c = (char)va_arg(args, int);
