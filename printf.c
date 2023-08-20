@@ -16,14 +16,14 @@ int _printf(const char *format, ...)
 	{
 		if (format[array_ctr] != '\0')
 		{
-			write(1, format[array_ctr], 1);
+			_putchar(format[array_ctr]);
 			count++;
 		}
 		else
 		{
 			count_ret = str_print(format, args, &count, &array_ctr);
 			count_ret = char_print(format, args, &count, &array_ctr);
-			count_ret = perc_print(format, args, &count, &array_ctr);
+			count_ret = perc_print(format, &count, &array_ctr);
 			if (count_ret == -1)
 				return (-1);
 		}
