@@ -12,7 +12,7 @@ int _printf(const char *format, ...)
 {
 	va_list args;
 	char *str, c;
-	int count = 0, i = 0;
+	int count = 0;
 
 	va_start(args, format);
 	while (*format)
@@ -28,10 +28,10 @@ int _printf(const char *format, ...)
 			}
 			else if (*format == 's')
 			{
-				*str = va_arg(args, char *);
-				for (i = 0; str[i] != '\0'; i++)
+				str = va_arg(args, char *);
+				for (; *str != '\0'; str++)
 				{
-					write(1, str[i], 1);
+					write(1, str, 1);
 					count++;
 				}
 			}
