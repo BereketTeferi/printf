@@ -10,8 +10,9 @@
 
 int _printf(const char *format, ...)
 {
-	unsigned int count = 0, i = 0;
-	char c, *str;
+	unsigned int count = 0;
+	char *str;
+	char c;
 	va_list args;
 
 	va_start(args, format);
@@ -34,7 +35,7 @@ int _printf(const char *format, ...)
 			else if (*format == 's')
 			{
 				*str = va_arg(args, char*);
-				while(*str)
+				while (*str)
 				{
 					_putchar(*str);
 					str++;
@@ -57,7 +58,7 @@ int _printf(const char *format, ...)
 		else
 		{
 			_putchar(*format);
-			count++
+			count++;
 		}
 		format++;
 	}
