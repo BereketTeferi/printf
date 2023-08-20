@@ -21,13 +21,14 @@ int _printf(const char *format, ...)
 		}
 		else
 		{
-			count_ret = str_print(format, args, &count, &array_ctr);
-			count_ret = char_print(format, args, &count, &array_ctr);
-			count_ret = perc_print(format, &count, &array_ctr);
-			if (count_ret == -1)
+			result = str_print(format, args, &count, &array_ctr);
+			result = char_print(format, args, &count, &array_ctr);
+			result = perc_print(format, &count, &array_ctr);
+			if (result == -1)
 				return (-1);
 		}
 		array_ctr++;
 	}
+	va_end(args);
 	return (count);
 }
