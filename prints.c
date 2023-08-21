@@ -85,7 +85,6 @@ int int_print(va_list args, int *count)
 	if (num <= INT_MAX && num >= INT_MIN)
 	{
 		print_number(num, count);
-		(*count)++;
 	}
 	else
 		return (-1);
