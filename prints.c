@@ -24,7 +24,7 @@ int str_print(va_list args, int *count)
 			_putchar(str[i]);
 			i++;
 		}
-		(*count)++;
+		(*count) += 6;
 	}
 	else
 	{
