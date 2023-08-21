@@ -46,7 +46,7 @@ int char_print(va_list args, int *count)
 
 	_putchar(c);
 	(*count)++;
-	return (1);
+	return (0);
 }
 
 /**
