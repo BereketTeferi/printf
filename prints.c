@@ -23,12 +23,13 @@ int str_print(va_list args, int *count)
 	{
 		while (str[i] != '\0')
 		{
-			_putchar(str[i]);
 			i++;
 			(*count)++;
 		}
+		write(1, str, i);
+		(*count) -= 1;
 	}
-	return (i);
+	return (0);
 }
 
 /**
