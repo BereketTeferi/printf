@@ -39,7 +39,7 @@ int _printf(const char *format, ...)
 				_putchar(format[array_ctr]);
 				count++;
 			}
-			if (format[array_ctr] == ' ' || format[array_ctr == '\0')
+			if (format[array_ctr] == ' ' || format[array_ctr] == '\0')
 				return (-1);
 		}
 		array_ctr++;
