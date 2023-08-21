@@ -80,7 +80,7 @@ int perc_print(int *count)
 
 int int_print(va_list args, int *count)
 {
-	int num = va_arg(args, int), i = 0;
+	int num = va_arg(args, int);
 
 	if (num <= INT_MAX && num >= INT_MIN)
 	{
