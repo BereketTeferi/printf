@@ -24,7 +24,7 @@ int _printf(const char *format, ...)
 		else if (format[array_ctr] == '%')
 		{
 			array_ctr++;
-			if (format[array] == ' ' || format[array_ctr] == '\0')
+			if (format[array_ctr] == ' ' || format[array_ctr] == '\0')
 				return (-1);
 			if (format[array_ctr] == 's')
 				str_print(args, &count);
