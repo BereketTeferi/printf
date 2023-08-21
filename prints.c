@@ -100,7 +100,7 @@ int int_print(va_list args, int *count)
  *
  * Return: number
  */
-int print_number(long int num, int *count)
+int print_number(long num, int *count)
 {
 	int *numbr, counter = 0, i;
 	long int n;
@@ -114,7 +114,7 @@ int print_number(long int num, int *count)
 	n = num;
 	while (n != 0)
 	{
-		n / 10;
+		n /= 10;
 		counter++;
 	}
 	n = num;
@@ -124,7 +124,7 @@ int print_number(long int num, int *count)
 	for (i = 0; i < counter; i++)
 	{
 		numbr[i] = n % 10;
-		n = n / 10;
+		n /= 10;
 	}
 	for (i = counter - 1; i >= 0; i--)
 	{
