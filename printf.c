@@ -37,6 +37,11 @@ int _printf(const char *format, ...)
 			}
 			else if (format[array_ctr] == ' ' || format[array_ctr] == '\0')
 				return (-1);
+			else
+			{
+				_putchar(format[array_ctr]);
+				count++;
+			}
 		}
 		array_ctr++;
 	}
