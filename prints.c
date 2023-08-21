@@ -15,7 +15,7 @@ int str_print(va_list args, int *count)
 	int i = 0;
 
 	if (*str == '\0')
-		return (0);
+		return (-1);
 	if (str == NULL)
 	{
 		str = "(null)";
