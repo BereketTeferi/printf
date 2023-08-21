@@ -39,6 +39,8 @@ int _printf(const char *format, ...)
 				return (-1);
 			else
 			{
+				_putchar(format[array_ctr - 1]);
+				count++;
 				_putchar(format[array_ctr]);
 				count++;
 			}
