@@ -10,7 +10,7 @@
 int perc_print(int *count);
 int _printf(const char *format, ...);
 int _putchar(char c);
-void print_number(int n, int *count)
+int print_number(int num, int *count)
 int str_print(va_list args, int *count);
 int char_print(va_list args, int *count);
 int int_print(va_list args, int *count);

@@ -84,7 +84,7 @@ int int_print(va_list args, int *count)
 
 	if (num <= INT_MAX && num >= INT_MIN)
 	{
-		print_number(n, count);
+		print_number(num, count);
 		(*count)++;
 	}
 	else
@@ -93,30 +93,44 @@ int int_print(va_list args, int *count)
 }
 
 /**
- * print_number - print numbers
+ * print_number - number printer
  *
- * @n: number to be printed
- * @count: count number of characters printed
+ * @num: number passed to be printed
+ * @count: number of characters printed
+ *
+ * Return: number
  */
-
-void print_number(int n, int *count)
+int print_number(long int num, int *count)
 {
-	unsigned int n1;
+	int *numbr, counter = 0, i;
+	long int n;
 
-	if (n < 0)
+	if (num < 0)
 	{
 		_putchar('-');
-		n1 = -n;
+		(*count)++;
+		num = -num;
+	}
+	n = num;
+	while (n != 0)
+	{
+		n / 10;
+		counter++;
+	}
+	n = num;
+	numbr = malloc(sizeof(int) * counter);
+	if (numbr == NULL)
+		return (-1);
+	for (i = 0; i < counter; i++)
+	{
+		numbr[i] = n % 10;
+		n = n / 10;
+	}
+	for (i = counter - 1; i >= 0; i--)
+	{
+		_putchar(numbr[i] + '0');
 		(*count)++;
 	}
-	else
-	{
-		n1 = n;
-	}
-	if (n1 / 10)
-	{
-		print_number(n1 / 10);
-	}
-	_putchar((n1 % 10) + '0');
-	count++;
+	free(numbr);
+	return (0);
 }
