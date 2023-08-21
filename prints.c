@@ -118,8 +118,9 @@ int print_number(long num, int *count)
 	}
 	n = num;
 	numbr = malloc(sizeof(int) * counter);
-	if (numbr == NULL)
+	if (!numbr)
 	{
+		_putchar('0');
 		(*count)++;
 		return (-1);
 	}
