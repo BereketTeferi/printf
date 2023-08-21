@@ -55,7 +55,7 @@ int char_print(va_list args, int *count)
 }
 
 /**
- * prec_print - prints percent
+ * perc_print - prints percent
  *
  * @count: number of character printed
  *
