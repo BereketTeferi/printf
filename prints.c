@@ -16,8 +16,7 @@ int str_print(va_list args, int *count)
 
 	if (str == NULL)
 	{
-		write(1, "(null)", 6);
-		(*count) += 6;
+		str = "(null)";
 	}
 	else
 	{
@@ -26,7 +25,6 @@ int str_print(va_list args, int *count)
 			_putchar(str[i]);
 			i++;
 			(*count)++;
-			return (0);
 		}
 	}
 	return (0);
