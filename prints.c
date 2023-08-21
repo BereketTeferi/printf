@@ -22,7 +22,6 @@ int str_print(va_list args, int *count)
 			_putchar(str[i]);
 			i++;
 			(*count)++;
-			break;
 		}
 	}
 	else
