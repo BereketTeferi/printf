@@ -37,6 +37,8 @@ int _printf(const char *format, ...)
 			}
 			else if (format[array_ctr] == ' ' || format[array_ctr] == '\0')
 				return (-1);
+			else
+				return (-1);
 		}
 		array_ctr++;
 	}
