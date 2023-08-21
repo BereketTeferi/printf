@@ -18,14 +18,11 @@ int str_print(va_list args, int *count)
 	{
 		str = "(null)";
 	}
-	else
+	while (str[i] != '\0')
 	{
-		while (str[i] != '\0')
-		{
-			_putchar(str[i]);
-			i++;
-			(*count)++;
-		}
+		_putchar(str[i]);
+		(*count)++;
+		i++;
 	}
 	return (0);
 }
