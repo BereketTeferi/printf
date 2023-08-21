@@ -23,7 +23,7 @@ int _printf(const char *format, ...)
 			_putchar(format[array_ctr]);
 			count++;
 		}
-		else
+		else if (format[array_ctr] == '%')
 		{
 			array_ctr++;
 			if (format[array_ctr] == 's')
