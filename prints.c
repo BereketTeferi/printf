@@ -21,16 +21,16 @@ int str_print(va_list args, int *count)
 		{
 			_putchar(str[i]);
 			i++;
-			(*count)++;
 		}
+		(*count) += 6;
 	}
 	else
 	{
 		while (str[i] != '\0')
 		{
 			_putchar(str[i]);
-			(*count)++;
 			i++;
+			(*count)++;
 		}
 	}
 	return (i);
@@ -49,6 +49,8 @@ int char_print(va_list args, int *count)
 {
 	char c = va_arg(args, int);
 
+	if (c == '\0')
+		return (-1);
 	_putchar(c);
 	(*count)++;
 	return (1);
