@@ -23,6 +23,7 @@ int str_print(va_list args, int *count)
 			i++;
 		}
 		(*count) += 6;
+		return (count);
 	}
 	else
 	{
