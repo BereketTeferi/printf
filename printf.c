@@ -31,10 +31,7 @@ int _printf(const char *format, ...)
 			else if (format[array_ctr] == 'd' || format[array_ctr] == 'i')
 				int_print(args, &count);
 			else if (format[array_ctr] == '%')
-			{
-				_putchar('%');
-				count++;
-			}
+				perc_print(&count);
 			else
 			{
 				_putchar(format[array_ctr - 1]);

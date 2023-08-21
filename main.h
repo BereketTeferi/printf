@@ -7,6 +7,7 @@
 #include <unistd.h>
 #include <ctype.h>
 
+int perc_print(int *count);
 int _printf(const char *format, ...);
 int _putchar(char c);
 int str_print(va_list args, int *count);

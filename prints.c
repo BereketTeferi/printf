@@ -55,6 +55,21 @@ int char_print(va_list args, int *count)
 }
 
 /**
+ * prec_print - prints percent
+ *
+ * @count: number of character printed
+ *
+ * Return: number
+ */
+
+int perc_print(int *count)
+{
+	_putchar('%');
+	(*count)++;
+	return (1);
+}
+
+/**
  * int_print - prints integers
  *
  * @args: va_list
