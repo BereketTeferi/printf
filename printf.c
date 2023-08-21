@@ -12,8 +12,8 @@ int _printf(const char *format, ...)
 	int count = 0, array_ctr = 0;
 
 	va_start(args, format);
-	if (format[0] == '\0')
-		return (count);
+	if (format == NULL)
+		return (-1);
 	while (format[array_ctr])
 	{
 		if (format[array_ctr] != '%')
