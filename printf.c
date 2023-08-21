@@ -35,8 +35,6 @@ int _printf(const char *format, ...)
 				_putchar('%');
 				count++;
 			}
-			else if (format[array_ctr] == ' ' || format[array_ctr] == '\0')
-				return (-1);
 			else
 			{
 				_putchar(format[array_ctr - 1]);
