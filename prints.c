@@ -81,7 +81,7 @@ int perc_print(int *count)
 int int_print(va_list args, int *count)
 {
 	int num = va_arg(args, int);
-	int num_length = 0, num_copy = num, i, digit;
+	int num_length = 0, num_copy = num, i, digit, divisor = 1;
 
 	if (num == 0)
 	{
@@ -102,9 +102,14 @@ int int_print(va_list args, int *count)
 	}
 	for (i = 0; i < num_length; i++)
 	{
-		digit = (num / power(10, num_length - i - 1)) % 10;
+		divisor *= 10;
+	}
+	for (i = 0; i < num_length; i++)
+	{
+		digit = (num_copy / divisor) % 10;
 		_putchar('0' + digit);
 		(*count)++;
+		divisor /= 10;
 	}
 	return (num < 0 ? num_length + 1 : num_length);
 }
