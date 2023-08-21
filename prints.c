@@ -81,35 +81,42 @@ int perc_print(int *count)
 int int_print(va_list args, int *count)
 {
 	int num = va_arg(args, int);
-	int num_length = 0, num_copy = num, i, digit, divisor = 1;
 
-	if (num == 0)
+	if (num <= INT_MAX && num >= INT_MIN)
 	{
-		_putchar('0');
+		print_number(n, count);
 		(*count)++;
-		return (1);
 	}
-	if (num < 0)
+	else
+		return (-1);
+	return (0);
+}
+
+/**
+ * print_number - print numbers
+ *
+ * @n: number to be printed
+ * @count: count number of characters printed
+ */
+
+void print_number(int n, int *count)
+{
+	unsigned int n1;
+
+	if (n < 0)
 	{
 		_putchar('-');
+		n1 = -n;
 		(*count)++;
-		num_copy = -num_copy;
 	}
-	while (num_copy)
+	else
 	{
-		num_copy /= 10;
-		num_length++;
+		n1 = n;
 	}
-	for (i = 0; i < num_length; i++)
+	if (n1 / 10)
 	{
-		divisor *= 10;
+		print_number(n1 / 10);
 	}
-	for (i = 0; i < num_length; i++)
-	{
-		digit = (num_copy / divisor) % 10;
-		_putchar('0' + digit);
-		(*count)++;
-		divisor /= 10;
-	}
-	return (num < 0 ? num_length + 1 : num_length);
+	_putchar((n1 % 10) + '0');
+	count++;
 }
