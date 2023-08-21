@@ -27,7 +27,6 @@ int str_print(va_list args, int *count)
 			i++;
 			(*count)++;
 		}
-		(*count)--;
 	}
 	return (0);
 }
