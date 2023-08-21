@@ -44,8 +44,9 @@ int char_print(va_list args, int *count)
 {
 	char c = va_arg(args, int);
 
-	if (c == 0)
+	if (c == ' ')
 		return (-1);
+
 	_putchar(c);
 	(*count)++;
 	return (0);
