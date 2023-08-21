@@ -26,6 +26,7 @@ int str_print(va_list args, int *count)
 			_putchar(str[i]);
 			i++;
 			(*count)++;
+			return (0);
 		}
 	}
 	return (0);
@@ -46,8 +47,6 @@ int char_print(va_list args, int *count)
 
 	if (c == '\0')
 	{
-		_putchar('\\');
-		_putchar('0');
 		return (-1);
 	}
 	_putchar(c);
