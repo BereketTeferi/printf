@@ -119,7 +119,10 @@ int print_number(long num, int *count)
 	n = num;
 	numbr = malloc(sizeof(int) * counter);
 	if (numbr == NULL)
+	{
+		(*count)++;
 		return (-1);
+	}
 	for (i = 0; i < counter; i++)
 	{
 		numbr[i] = n % 10;
