@@ -37,6 +37,8 @@ int _printf(const char *format, ...)
 				_putchar('%');
 				count++;
 			}
+			else if (format[array_ctr] == ' ')
+				return (-1);
 		}
 		array_ctr++;
 	}
