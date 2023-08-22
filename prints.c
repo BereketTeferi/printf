@@ -131,7 +131,7 @@ int print_number(long num, int *count)
 	}
 	for (i = 0; i < counter; i++)
 	{
-		_putchar(numbr[counter -1 -i] + '0');
+		_putchar(numbr[counter -i] + '0');
 		(*count)++;
 	}
 	free(numbr);
