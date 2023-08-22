@@ -129,12 +129,10 @@ int print_number(long num, int *count)
 		numbr[i] = n % 10;
 		n /= 10;
 	}
-	i = counter -1;
-	while (i >= 0)
+	for (i = counter - 1; i >= 0; i++)
 	{
-		_putchar(numbr[i] + '0');
+		_putchar(number[i]);
 		(*count)++;
-		i++;
 	}
 	free(numbr);
 	return (0);
