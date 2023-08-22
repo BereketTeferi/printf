@@ -89,7 +89,7 @@ int int_print(va_list args, int *count)
 	else if (num == INT_MIN)
 	{
 		num = -2147483648;
-		print_number(num2, count);
+		print_number(num, count);
 	}
 	else
 		return (-1);
