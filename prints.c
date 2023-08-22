@@ -96,7 +96,7 @@ int int_print(va_list args, int *count)
  */
 int print_number(long num, int *count)
 {
-	int *numbr, counter = 0, i;
+	long *numbr, counter = 0, i;
 	long n;
 
 	if (num < 0)
@@ -131,7 +131,7 @@ int print_number(long num, int *count)
 	}
 	for (i = counter - 1; i >= 0; i--)
 	{
-		_putchar(numbr[i] + '0');
+		_putchar('0' + numbr[i]);
 		(*count)++;
 	}
 	free(numbr);
