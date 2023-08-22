@@ -129,9 +129,9 @@ int print_number(long num, int *count)
 		numbr[i] = n % 10;
 		n /= 10;
 	}
-	for (i = 0; i < counter; i++)
+	for (i = 1; i <= counter; i++)
 	{
-		_putchar(numbr[counter -i] + '0');
+		_putchar(numbr[counter - i] + '0');
 		(*count)++;
 	}
 	free(numbr);
