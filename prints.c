@@ -121,6 +121,7 @@ int print_number(long num, int *count)
 	numbr = malloc(sizeof(int) * counter);
 	if (!numbr)
 	{
+		_putchar('0');
 		return (-1);
 	}
 	for (i = 0; i < counter; i++)
