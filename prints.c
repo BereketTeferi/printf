@@ -82,16 +82,7 @@ int int_print(va_list args, int *count)
 {
 	int num = va_arg(args, int);
 
-	if (num <= INT_MAX && num >= INT_MIN)
-	{
-		print_number(num, count);
-	}
-	else if (num == INT_MIN)
-		print_number(INT_MIN, count);
-	else if (num == INT_MAX)
-		print_number(INT_MAX, count);
-	else
-		return (-1);
+	print_number(num, count);
 	return (0);
 }
 
