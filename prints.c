@@ -105,6 +105,12 @@ int print_number(long num, int *count)
 		(*count)++;
 		num = -num;
 	}
+	if (num == 0)
+	{
+		_putchar('0');
+		(*count)++;
+		return (0);
+	}
 	n = num;
 	while (n != 0)
 	{
@@ -115,7 +121,6 @@ int print_number(long num, int *count)
 	numbr = malloc(sizeof(int) * counter);
 	if (!numbr)
 	{
-		_putchar('0');
 		return (-1);
 	}
 	for (i = 0; i < counter; i++)
