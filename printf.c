@@ -32,6 +32,8 @@ int handle_specifier(char specifier, va_list args, int *count)
 			return (x_print(args, count));
 		case 'X':
 			return (X_print(args, count));
+		case 'S':
+			return (S_print(args, count));
 		default:
 			_putchar('%');
 			_putchar(specifier);

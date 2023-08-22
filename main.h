@@ -23,5 +23,7 @@ int u_print(va_list args, int *count);
 int o_print(va_list args, int *count);
 int x_print(va_list args, int *count);
 int X_print(va_list args, int *count);
+int S_print(va_list args, int *count);
+void x_print_single(int n, int *count);
 
 #endif
