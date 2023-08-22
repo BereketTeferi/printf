@@ -172,3 +172,136 @@ int bin_print(va_list args, int *count)
 	return (0);
 }
 
+/**
+ * print_base - prints number in given base
+ *
+ * @num: number to print
+ * @base: base for conversion
+ * @count: counts number of characters printed
+ *
+ * Return: number
+ */
+
+int print_base(unsigned int num, int base, int *count)
+{
+	char *digits = "0123456789abcdef";
+	char buffer[32];
+	int length = 0, i;
+
+	if (num == 0)
+	{
+		_putchar('0');
+		(*count)++;
+		return (0);
+	}
+
+	while (num > 0)
+	{
+		buffer[length++] = digits[num % base];
+		num /= base;
+	}
+
+	for (i = length - 1; i >= 0; i--)
+	{
+		_putchar(buffer[i]);
+		(*count)++;
+	}
+	return (0);
+}
+
+/**
+ * u_print - prints for %u
+ *
+ * args: va_list
+ * @count: counts number of characters printed
+ *
+ * Return: function call
+ */
+
+int u_print(va_list args, int *count)
+{
+	unsigned int num = va_arg(args, unsigned int);
+	return print_number(num, count);
+}
+
+/**
+ * o_print - prints for %o
+ *
+ * args: va_list
+ * @count: counts number of characters printed
+ *
+ * Return: function call
+ */
+
+int o_print(va_list args, int *count)
+{
+	unsigned int num = va_arg(args, unsigned int);
+	return print_base(num, 8, count);
+}
+
+/**
+ * x_print - prints for %x
+ *
+ * args: va_list
+ * @count: counts number of characters printed
+ *
+ * Return: function call
+ */
+
+int x_print(va_list args, int *count)
+{
+	unsigned int num = va_arg(args, unsigned int);
+	return print_base(num, 16, count);
+}
+
+/**
+ * X_print - prints for %X
+ *
+ * args: va_list
+ * @count: counts number of characters printed
+ *
+ * Return: function call
+ */
+
+int X_print(va_list args, int *count)
+{
+	unsigned int num = va_arg(args, unsigned int);
+	return print_base_upper(num, 16, count);
+}
+
+/**
+ * print_base_upper - prints number in uppercase hexadecimal
+ *
+ * @num: number to print
+ * @base: base for conversion
+ * @count: counts number of characters printed
+ *
+ * Return: number
+ */
+
+int print_base_upper(unsigned int num, int base, int *count)
+{
+	char *digits = "0123456789ABCDEF";
+	char buffer[32];
+	int length = 0, i;
+
+	if (num == 0)
+	{
+		_putchar('0');
+		(*count)++;
+		return (0);
+	}
+
+	while (num > 0)
+	{
+		buffer[length++] = digits[num % base];
+		num /= base;
+	}
+
+	for (i = length - 1; i >= 0; i--)
+	{
+		_putchar(buffer[i]);
+		(*count)++;
+	}
+	return (0);
+}

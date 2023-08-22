@@ -36,6 +36,14 @@ int _printf(const char *format, ...)
 				bin_print(args, &count);
 			else if (format[array_ctr] == '%')
 				perc_print(&count);
+			else if (format[array_ctr] == 'u')
+				u_print(args, &count);
+			else if (format[array_ctr] == 'o')
+				o_print(args, &count);
+			else if (format[array_ctr] == 'x')
+				x_print(args, &count)
+			else if (format[array_ctr] == 'X')
+				X_print(args, &count);
 			else
 			{
 				_putchar(format[array_ctr - 1]);
