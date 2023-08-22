@@ -107,7 +107,7 @@ int print_number(long num, int *count)
 		{
 			write(1, "2147483648", 10);
 			(*count) += 10;
-			return (-1);
+			return (0);
 		}
 		num = -num;
 	}
