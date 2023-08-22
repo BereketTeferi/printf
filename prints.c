@@ -81,10 +81,21 @@ int perc_print(int *count)
 int int_print(va_list args, int *count)
 {
 	int num = va_arg(args, int);
+	long num2;
 
 	if (num <= INT_MAX && num >= INT_MIN)
 	{
 		print_number(num, count);
+	}
+	else if (num == INT_MAX)
+	{
+		num2 = 2147483647;
+		print_number(num2, count);
+	}
+	else if (num == INT_MIN)
+	{
+		num2 = -2147483648;
+		print_number(num2, count);
 	}
 	else
 		return (-1);
