@@ -87,9 +87,9 @@ int int_print(va_list args, int *count)
 		print_number(num, count);
 	}
 	else if (num == INT_MIN)
-	{
 		print_number(INT_MIN, count);
-	}
+	else if (num == INT_MAX)
+		print_number(INT_MAX, count);
 	else
 		return (-1);
 	return (0);
