@@ -41,7 +41,7 @@ int _printf(const char *format, ...)
 			else if (format[array_ctr] == 'o')
 				o_print(args, &count);
 			else if (format[array_ctr] == 'x')
-				x_print(args, &count)
+				x_print(args, &count);
 			else if (format[array_ctr] == 'X')
 				X_print(args, &count);
 			else

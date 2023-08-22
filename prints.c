@@ -210,6 +210,41 @@ int print_base(unsigned int num, int base, int *count)
 }
 
 /**
+ * print_base_upper - prints number in uppercase hexadecimal
+ *
+ * @num: number to print
+ * @base: base for conversion
+ * @count: counts number of characters printed
+ *
+ * Return: number
+ */
+
+int print_base_upper(unsigned int num, int base, int *count)
+{
+	char *digits = "0123456789ABCDEF";
+	char buffer[32];
+	int length = 0, i;
+
+	if (num == 0)
+	{
+		_putchar('0');
+		(*count)++;
+		return (0);
+	}
+	while (num > 0)
+	{
+		buffer[length++] = digits[num % base];
+		num /= base;
+	}
+	for (i = length - 1; i >= 0; i--)
+	{
+		_putchar(buffer[i]);
+		(*count)++;
+	}
+	return (0);
+}
+
+/**
  * u_print - prints for %u
  *
  * args: va_list
@@ -267,41 +302,4 @@ int X_print(va_list args, int *count)
 {
 	unsigned int num = va_arg(args, unsigned int);
 	return print_base_upper(num, 16, count);
-}
-
-/**
- * print_base_upper - prints number in uppercase hexadecimal
- *
- * @num: number to print
- * @base: base for conversion
- * @count: counts number of characters printed
- *
- * Return: number
- */
-
-int print_base_upper(unsigned int num, int base, int *count)
-{
-	char *digits = "0123456789ABCDEF";
-	char buffer[32];
-	int length = 0, i;
-
-	if (num == 0)
-	{
-		_putchar('0');
-		(*count)++;
-		return (0);
-	}
-
-	while (num > 0)
-	{
-		buffer[length++] = digits[num % base];
-		num /= base;
-	}
-
-	for (i = length - 1; i >= 0; i--)
-	{
-		_putchar(buffer[i]);
-		(*count)++;
-	}
-	return (0);
 }
