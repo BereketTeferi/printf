@@ -96,7 +96,7 @@ int int_print(va_list args, int *count)
  */
 int print_number(long num, int *count)
 {
-	long *numbr, counter = 0, i;
+	int *numbr, counter = 0, i;
 	long n;
 
 	if (num < 0)
