@@ -129,7 +129,7 @@ int print_number(long num, int *count)
 		numbr[i] = n % 10;
 		n /= 10;
 	}
-	for (i = counter; i > 0; i--)
+	for (i = counter; i >= 0; i--)
 	{
 		_putchar(numbr[i] + '0');
 		(*count)++;
