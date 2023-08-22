@@ -132,8 +132,8 @@ int print_number(long num, int *count)
 	for (i = counter - 1; i >= 0; i--)
 	{
 		_putchar(numbr[i] + '0');
-		(*count)++;
 	}
+	(*count) += counter - 1;
 	free(numbr);
 	return (0);
 }
