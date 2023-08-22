@@ -108,11 +108,17 @@ int print_number(long num, int *count)
 	int *numbr, counter = 0, i;
 	long n;
 
-	if (num < 0 || num == INT_MIN)
+	if (num < 0)
 	{
 		_putchar('-');
 		(*count)++;
-		n = -num;
+		if (num == INT_MIN)
+		{
+			write(1, "2147483648", 10);
+			(*count) += 10;
+			return (0);
+		}
+		num = -num;
 	}
 	n = num;
 	while (n != 0)
