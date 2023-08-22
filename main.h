@@ -16,5 +16,6 @@ int print_number(long num, int *count);
 int str_print(va_list args, int *count);
 int char_print(va_list args, int *count);
 int int_print(va_list args, int *count);
+int bin_print(va_list args, int *count);
 
 #endif

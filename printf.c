@@ -32,6 +32,8 @@ int _printf(const char *format, ...)
 				char_print(args, &count);
 			else if (format[array_ctr] == 'd' || format[array_ctr] == 'i')
 				int_print(args, &count);
+			else if (format[array_ctr] == 'b')
+				bin_print(args, &count);
 			else if (format[array_ctr] == '%')
 				perc_print(&count);
 			else
