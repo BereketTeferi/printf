@@ -103,6 +103,12 @@ int print_number(long num, int *count)
 	{
 		_putchar('-');
 		(*count)++;
+		if (num == INT_MIN)
+		{
+			write(1, "2147483648", 10);
+			(*count) += 10;
+			return (-1);
+		}
 		num = -num;
 	}
 	n = num;
