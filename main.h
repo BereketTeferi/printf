@@ -17,6 +17,8 @@ int str_print(va_list args, int *count);
 int char_print(va_list args, int *count);
 int int_print(va_list args, int *count);
 int bin_print(va_list args, int *count);
+int print_base(unsigned int num, int base, int *count);
+int print_base_upper(unsigned int num, int base, int *count);
 int u_print(va_list args, int *count);
 int o_print(va_list args, int *count);
 int x_print(va_list args, int *count);
