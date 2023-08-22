@@ -108,11 +108,11 @@ int print_number(long num, int *count)
 	int *numbr, counter = 0, i;
 	long n;
 
-	if (num < 0)
+	if (num < 0 || num == INT_MIN)
 	{
 		_putchar('-');
 		(*count)++;
-		num = -num;
+		n = -num;
 	}
 	n = num;
 	while (n != 0)
